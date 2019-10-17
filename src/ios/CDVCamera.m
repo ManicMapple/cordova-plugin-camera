@@ -766,6 +766,11 @@ static NSString* toBase64(NSData* data) {
     } else {
         NSArray* mediaArray = @[(NSString*)(pictureOptions.mediaType == MediaTypeVideo ? kUTTypeMovie : kUTTypeImage)];
         cameraPicker.mediaTypes = mediaArray;
+	
+	//GT-HACK - do not compress
+	if (@available(iOS 11.0, *)) {
+            cameraPicker.videoExportPreset = AVAssetExportPresetPassthrough;
+        }
     }
 
     return cameraPicker;
