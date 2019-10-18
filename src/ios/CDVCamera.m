@@ -518,7 +518,7 @@ static NSString* toBase64(NSData* data) {
     NSString* lastString = [spliteArray lastObject];
     NSError *error;
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *documentsDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"tmp"];
+    NSString *documentsDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/NoCloud"];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:lastString];
     [fileManager copyItemAtPath:moviePath toPath:filePath error:&error];
 
